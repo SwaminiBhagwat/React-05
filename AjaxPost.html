@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #info
+        {
+            background-color: pink;
+            height: 300px;
+            margin: 40px;
+        }
+    </style>
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+   <script>
+       $(document).ready(
+           function()
+           {
+               $("#reg").click(
+                   function(id)
+                   {
+                    sessionStorage.setItem(i,d);
+                       var i=$("#image").val();
+                       var d=$("#desc").val();
+                       $.post("http://localhost:3000/Reg",
+                       {
+                        "description":d,
+                        "image":i
+                       })
+                        .done(function(){
+                         window.location.href="new.html"
+                       })
+
+
+                       //var details = n+" "+b+" "+e+" "+d;
+                       //console.log(details);
+                      // $("#info").text(details);
+                      //$("table").html("<tr><td>"+n+"</td><td>"+b+"</td><td>"+e+"</td><td>"+d+"</td></tr>")
+                   }
+               )
+           }
+       )
+   </script>
+</head>
+<body>
+     Image <input type="file" id=image accept="image/png, image/jpg, image/jpeg">
+     <!-- Description <input type="textarea" id="textarea" rows> -->
+     <label for="w3review">Description</label>
+    <textarea id="desc" name="desc" rows="4" cols="50"> 
+    </textarea>
+
+
+     </select><br>
+      <button id="reg"> <a href="Ajax_CRUD.html"> Register</a></button>
+      <div id="info">
+          <table border="3px">
+             
+              </table>
+      </div>
+</body>
+</html>
+
+<!-- //edit name in ajax crud -->
